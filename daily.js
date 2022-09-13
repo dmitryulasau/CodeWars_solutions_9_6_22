@@ -63,19 +63,55 @@
 // Output: 8
 // Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 
-function missing(array) {
-  temp = [];
-  for (let i = 0; i <= array.length; i++) {
-    temp.push(i);
-  }
+// function missing(array) {
+//   temp = [];
+//   for (let i = 0; i <= array.length; i++) {
+//     temp.push(i);
+//   }
 
-  for (const missing of temp) {
-    if (array.indexOf(missing) === -1) {
-      return missing;
-    }
-  }
+//   for (const missing of temp) {
+//     if (array.indexOf(missing) === -1) {
+//       return missing;
+//     }
+//   }
+// }
+
+// console.log(missing([3, 0, 1]));
+// console.log(missing([0, 1]));
+// console.log(missing([9, 6, 4, 2, 3, 5, 7, 0, 1]));
+
+console.log(`============== DAILY 9-12-2022 ==============`);
+// Given an integer x, return true if x is palindrome integer.
+// An integer is a palindrome when it reads the same backward as forward.
+
+// For example, 121 is a palindrome while 123 is not.
+// Example 1:
+// Input: x = 121
+// Output: true
+// Explanation: 121 reads as 121 from left to right and from right to left.
+
+// Example 2:
+// Input: x = -121
+// Output: false
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+// Example 3:
+// Input: x = 10
+// Output: false
+// Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+
+// Constraints:
+// -231 <= x <= 231 - 1
+
+// Follow up: Could you solve it without converting the integer to a string?
+// return number === Number(number.toString().split("").reverse().join(""));
+
+function isPalindrome(number) {
+  return number === Number([...`${number}`].reverse("").join(""));
 }
 
-console.log(missing([3, 0, 1]));
-console.log(missing([0, 1]));
-console.log(missing([9, 6, 4, 2, 3, 5, 7, 0, 1]));
+console.log(isPalindrome(121));
+console.log(isPalindrome(-121));
+console.log(isPalindrome(10));
+console.log(isPalindrome(2));
+console.log(isPalindrome(11));
