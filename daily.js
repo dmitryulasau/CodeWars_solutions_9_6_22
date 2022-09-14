@@ -115,3 +115,44 @@ console.log(isPalindrome(-121));
 console.log(isPalindrome(10));
 console.log(isPalindrome(2));
 console.log(isPalindrome(11));
+
+console.log(`============== DAILY 9-13-2022 ==============`);
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+// If there is no common prefix, return an empty string "".
+
+// Example 1:
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+
+// Example 2:
+// Input: strs = ["dog","racecar","car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+
+function prefix(array) {
+  let result = "";
+  if (array.length === 0) {
+    return result;
+  } else if (array.length === 1) {
+    result += array[0];
+  }
+
+  let shortestWordLength = array.reduce((acc, cur) =>
+    acc.length < cur.length ? acc : cur
+  ).length;
+
+  for (let i = 0; i < shortestWordLength; i++) {
+    for (let j = 0; j < array.length; j++) {
+      if (array[0][i] != array[j][i]) {
+        return result;
+      }
+    }
+    result += array[0][i];
+  }
+
+  return result;
+}
+
+console.log(prefix(["flower", "flow", "flight"]));
+console.log(prefix(["dog", "racecar", "car"]));
