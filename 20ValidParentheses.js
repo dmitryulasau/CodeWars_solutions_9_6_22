@@ -40,5 +40,5 @@ const isValid = function (s) {
 };
 
 console.log(isValid("()"));
-console.log(isValid("()[]{}"));
-console.log(isValid("(]"));
+// console.log(isValid("()[]{}"));
+// console.log(isValid("(]"));
