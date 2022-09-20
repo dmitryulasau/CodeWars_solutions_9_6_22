@@ -156,3 +156,37 @@ function prefix(array) {
 
 console.log(prefix(["flower", "flow", "flight"]));
 console.log(prefix(["dog", "racecar", "car"]));
+
+///
+// Given a non-empty array of integers nums, every element appears twice except
+// for one. Find that single one.
+// BONUS: You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+// Example 1:
+// Input: nums = [2,2,1]
+// Output: 1
+
+// Example 2:
+// Input: nums = [4,1,2,1,2]
+// Output: 4
+
+// Example 3:
+// Input: nums = [1]
+// Output: 1
+function findOne(array) {
+  let counts = {};
+
+  for (i = 0; i < array.length; i++) {
+    counts[array[i]] ? counts[array[i]]++ : (counts[array[i]] = 1);
+  }
+
+  console.log(counts);
+
+  for (key in counts) {
+    if (counts[key] === 1) return key;
+  }
+}
+
+console.log(findOne([2, 2, 1]));
+console.log(findOne([4, 1, 2, 1, 2]));
+console.log(findOne([1]));
