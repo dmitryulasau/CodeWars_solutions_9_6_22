@@ -205,28 +205,28 @@
 // Output: -1
 // Explanation: "leeto" did not occur in "leetcode", so we return -1.
 
-function find(haystack, needle) {
-  if (haystack == null || needle == null) {
-    return -1;
-  }
+// function find(haystack, needle) {
+//   if (haystack == null || needle == null) {
+//     return -1;
+//   }
 
-  if (haystack === needle) {
-    return 0;
-  }
+//   if (haystack === needle) {
+//     return 0;
+//   }
 
-  for (let i = 0; i < haystack.length; i++) {
-    if (haystack.substring(i, i + needle.length) === needle) {
-      return i;
-    }
-  }
-  return -1;
-}
+//   for (let i = 0; i < haystack.length; i++) {
+//     if (haystack.substring(i, i + needle.length) === needle) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(find("sadbutsad", "sad"));
-console.log(find("leetcode", "leeto"));
-console.log(find("hello", "ll"));
-console.log(find("", ""));
-console.log(find("a", "a"));
+// console.log(find("sadbutsad", "sad"));
+// console.log(find("leetcode", "leeto"));
+// console.log(find("hello", "ll"));
+// console.log(find("", ""));
+// console.log(find("a", "a"));
 
 // Given a string s, reverse the order of characters in each word within
 // a sentence while still preserving whitespace and initial word order.
@@ -239,11 +239,31 @@ console.log(find("a", "a"));
 // Input: s = "God Ding"
 // Output: "doG gniD"
 
-function reverse(s) {
-  return s
-    .split(" ")
-    .map((element) => element.split("").reverse().join(""))
-    .join(" ");
-}
+// function reverse(s) {
+//   return s
+//     .split(" ")
+//     .map((element) => element.split("").reverse().join(""))
+//     .join(" ");
+// }
 
-console.log(reverse("Let's take LeetCode contest"));
+// console.log(reverse("Let's take LeetCode contest"));
+
+// Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+// If target is not found in the array, return [-1, -1].
+// Example 1:
+// Input: nums = [5,7,7,8,8,10], target = 8
+// Output: [3,4]
+// Example 2:
+// Input: nums = [5,7,7,8,8,10], target = 6
+// Output: [-1,-1]
+// Example 3:
+// Input: nums = [], target = 0
+// Output: [-1,-1]
+
+function startEnd(array, target) {
+  if (array.indexOf(target) === -1) {
+    return [-1, -1];
+  }
+}
+console.log(startEnd([5, 7, 7, 8, 8, 10], 8));
+console.log(startEnd([5, 7, 7, 8, 8, 10], 6));
