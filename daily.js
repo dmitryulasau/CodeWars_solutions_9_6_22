@@ -260,10 +260,10 @@
 // Input: nums = [], target = 0
 // Output: [-1,-1]
 
-function startEnd(array, target) {
-  if (array.indexOf(target) === -1) {
-    return [-1, -1];
-  }
-}
-console.log(startEnd([5, 7, 7, 8, 8, 10], 8));
-console.log(startEnd([5, 7, 7, 8, 8, 10], 6));
+// function startEnd(array, target) {
+//   if (array.indexOf(target) === -1) {
+//     return [-1, -1];
+//   }
+// }
+// console.log(startEnd([5, 7, 7, 8, 8, 10], 8));
+// console.log(startEnd([5, 7, 7, 8, 8, 10], 6));
